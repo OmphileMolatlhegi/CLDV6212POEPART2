@@ -1,0 +1,35 @@
+@model IEnumerable<ABCRetails.Models.Order>
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+<h2>Orders</h2>
+<a class="btn btn-primary mb-2" href="/Order/Create">Add Order</a>
+<table class="table table-bordered">
+<thead><tr><th>Order Date</th><th>Product</th><th>Qty</th><th>Total</th><th>Status</th><th>Actions</th></tr></thead>
+<tbody>
+@foreach (var o in Model){
+<tr>
+<td>@o.OrderDate.ToString("u")</td>
+<td>@o.ProductName</td>
+<td>@o.Quantity</td>
+<td>@o.TotalPrice.ToString("C")</td>
+<td><span class="badge bg-secondary">@o.Status</span></td>
+<td>
+<form method="get" action="/Order/Details">
+<input type="hidden" name="partitionKey" value="@o.PartitionKey" />
+<input type="hidden" name="rowKey" value="@o.RowKey" />
+<button class="btn btn-sm btn-info">Details</button>
+</form>
+<form method="get" action="/Order/Edit" class="d-inline">
+<input type="hidden" name="partitionKey" value="@o.PartitionKey" />
+<input type="hidden" name="rowKey" value="@o.RowKey" />
+<button class="btn btn-sm btn-warning">Edit</button>
+</form>
+<form method="post" action="/Order/Delete" class="d-inline">
+<input type="hidden" name="partitionKey" value="@o.PartitionKey" />
+<input type="hidden" name="rowKey" value="@o.RowKey" />
+<button class="btn btn-sm btn-danger" onclick="return confirm('Delete?')">Delete</button>
+</form>
+</td>
+</tr>
+}
+</tbody>
+</table>

@@ -1,0 +1,12 @@
+@model ABCRetails.Models.Customer
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+<h2>Edit Customer</h2>
+<form method="post">
+<div class="mb-2"><label>Name</label><input class="form-control" asp-for="Name" /></div>
+<div class="mb-2"><label>Surname</label><input class="form-control" asp-for="Surname" /></div>
+<div class="mb-2"><label>Username</label><input class="form-control" asp-for="Username" /></div>
+<div class="mb-2"><label>Email</label><input class="form-control" asp-for="Email" /></div>
+<div class="mb-2"><label>Shipping Address</label><input class="form-control" asp-for="ShippingAddress" /></div>
+<button class="btn btn-success">Save</button>
+<a href="/Customer" class="btn btn-secondary">Cancel</a>
+</form>

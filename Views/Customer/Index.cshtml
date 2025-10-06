@@ -1,0 +1,29 @@
+@model IEnumerable<ABCRetails.Models.Customer>
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+<h2>Customers</h2>
+<a class="btn btn-primary mb-2" href="/Customer/Create">Add New Customer</a>
+<table class="table table-bordered">
+	<thead><tr><th>Name</th><th>Username</th><th>Email</th><th>ShippingAddress</th><th>Actions</th></tr></thead>
+<tbody>
+@foreach (var c in Model){
+<tr>
+<td>@c.Name @c.Surname</td>
+<td>@c.Username</td>
+<td>@c.Email</td>
+<td>@c.ShippingAddress</td>
+<td>
+<form method="get" action="/Customer/Edit">
+<input type="hidden" name="partitionKey" value="@c.PartitionKey" />
+<input type="hidden" name="rowKey" value="@c.RowKey" />
+<button class="btn btn-sm btn-warning">Edit</button>
+</form>
+<form method="post" action="/Customer/Delete" class="d-inline">
+<input type="hidden" name="partitionKey" value="@c.PartitionKey" />
+<input type="hidden" name="rowKey" value="@c.RowKey" />
+<button class="btn btn-sm btn-danger" onclick="return confirm('Delete?')">Delete</button>
+</form>
+</td>
+</tr>
+}
+</tbody>
+</table>

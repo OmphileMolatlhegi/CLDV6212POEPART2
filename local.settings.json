@@ -1,0 +1,21 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+        "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=newcldv;AccountKey=Tcm87g1YuMBMktmquT3c4wW0g2ULwk1s3MJfsYQEl48TNYrfyAqEGk+UZKfcy1zrBCyXvkVTODQc+AStH5l+8A==;EndpointSuffix=core.windows.net",
+        "STORAGE_CONNECTION": "DefaultEndpointsProtocol=https;AccountName=newcldv;AccountKey=Tcm87g1YuMBMktmquT3c4wW0g2ULwk1s3MJfsYQEl48TNYrfyAqEGk+UZKfcy1zrBCyXvkVTODQc+AStH5l+8A==;EndpointSuffix=core.windows.net",
+        "TableStorageConnection": "DefaultEndpointsProtocol=https;AccountName=newcldv;AccountKey=4ogkMqVaLeKRKf/d52Od6Y3Xb2LwytwjkUFvYKlQSLnmAm9jvnyABOFUkgqPDShJVnc7o7CEII9L+AStmH1i9g==;EndpointSuffix=core.windows.net;",
+        "BlobStorageConnection": "DefaultEndpointsProtocol=https;AccountName=newcldv;AccountKey=4ogkMqVaLeKRKf/d52Od6Y3Xb2LwytwjkUFvYKlQSLnmAm9jvnyABOFUkgqPDShJVnc7o7CEII9L+AStmH1i9g==;EndpointSuffix=core.windows.net;",
+        "QueueStorageConnection": "DefaultEndpointsProtocol=https;AccountName=newcldv;AccountKey=4ogkMqVaLeKRKf/d52Od6Y3Xb2LwytwjkUFvYKlQSLnmAm9jvnyABOFUkgqPDShJVnc7o7CEII9L+AStmH1i9g==;EndpointSuffix=core.windows.net;",
+        "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+        "TABLE_CUSTOMER": "Customer",
+        "TABLE_PRODUCT": "Product",
+        "TABLE_ORDER": "Order",
+        "BLOB_PRODUCT_IMAGES": "product-images",
+        "BLOB_PAYMENT_PROOFS": "payment-proofs",
+        "QUEUE_ORDER_NOTIFICATIONS": "order-notifications",
+        "QUEUE_STOCK_UPDATES": "stock-updates",
+        "FILESHARE_CONTRACTS": "contracts",
+        "FILESHARE_DIR_PAYMENTS": "payments"
+    }
+}
+

@@ -1,0 +1,10 @@
+@model ABCRetails.Models.Order
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+<h2>Edit Order</h2>
+<form method="post">
+<input type="hidden" asp-for="PartitionKey" />
+<input type="hidden" asp-for="RowKey" />
+<div class="mb-2"><label>Status</label><input class="form-control" asp-for="Status" /></div>
+<button class="btn btn-success">Save</button>
+<a href="/Order" class="btn btn-secondary">Cancel</a>
+</form>

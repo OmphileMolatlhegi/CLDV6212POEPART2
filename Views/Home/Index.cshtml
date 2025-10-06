@@ -1,0 +1,39 @@
+@model ABCRetails.Models.ViewModels.HomeViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Welcome to ABC Retails</h1>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card"><div class="card-body">
+            <h5 class="card-title">Customers</h5>
+            <p class="display-6">@Model.CustomerCount</p>
+        </div></div>
+    </div>
+    <div class="col-md-4">
+        <div class="card"><div class="card-body">
+            <h5 class="card-title">Products</h5>
+            <p class="display-6">@Model.ProductCount</p>
+        </div></div>
+    </div>
+    <div class="col-md-4">
+        <div class="card"><div class="card-body">
+            <h5 class="card-title">Orders</h5>
+            <p class="display-6">@Model.OrderCount</p>
+        </div></div>
+    </div>
+</div>
+<h3 class="mt-4">Featured Products</h3>
+<table class="table table-striped">
+    <thead><tr><th>Name</th><th>Price</th><th>Image</th></tr></thead>
+    <tbody>
+    @foreach (var p in Model.FeaturedProducts ?? new List<ABCRetails.Models.Product>())
+    {
+        <tr>
+            <td>@p.ProductName</td>
+            <td>@p.Price.ToString("C")</td>
+            <td>@if(!string.IsNullOrWhiteSpace(p.ImageUrl)){<img src="@p.ImageUrl" style="height:50px" />}</td>
+        </tr>
+    }
+    </tbody>
+</table>

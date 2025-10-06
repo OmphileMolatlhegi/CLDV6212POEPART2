@@ -1,0 +1,12 @@
+@model ABCRetails.Models.Order
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+<h2>Order Details</h2>
+<table class="table">
+<tr><th>OrderId</th><td>@Model.OrderId</td></tr>
+<tr><th>Product</th><td>@Model.ProductName</td></tr>
+<tr><th>Quantity</th><td>@Model.Quantity</td></tr>
+<tr><th>Total</th><td>@Model.TotalPrice.ToString("C")</td></tr>
+<tr><th>Status</th><td>@Model.Status</td></tr>
+<tr><th>Placed</th><td>@Model.OrderDate.ToString("u")</td></tr>
+</table>
+<a class="btn btn-secondary" href="/Order">Back</a>

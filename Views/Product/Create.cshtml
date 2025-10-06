@@ -1,0 +1,42 @@
+
+@model ABCRetails.Models.Product
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+<h2>Create Product</h2>
+
+<form method="post" enctype="multipart/form-data" asp-action="Create">
+    <div class="mb-2">
+        <label asp-for="ProductName" class="form-label">Product Name</label>
+        <input class="form-control" asp-for="ProductName" />
+        <span asp-validation-for="ProductName" class="text-danger"></span>
+    </div>
+    
+    <div class="mb-2">
+        <label asp-for="Description" class="form-label">Description</label>
+        <textarea class="form-control" asp-for="Description"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    
+    <div class="mb-2">
+        <label asp-for="Price" class="form-label">Price</label>
+        <input class="form-control" asp-for="Price" type="number" step="0.01"/>
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    
+    <div class="mb-2">
+        <label asp-for="StockAvailable" class="form-label">Stock Available</label>
+        <input class="form-control" asp-for="StockAvailable" type="number"/>
+        <span asp-validation-for="StockAvailable" class="text-danger"></span>
+    </div>
+    
+    <div class="mb-2">
+        <label class="form-label">Product Image</label>
+        <input class="form-control" type="file" name="image" accept="image/*" />
+    </div>
+    
+    <button type="submit" class="btn btn-success">Create Product</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

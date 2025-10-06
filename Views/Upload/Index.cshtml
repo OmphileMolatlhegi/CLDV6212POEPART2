@@ -1,0 +1,11 @@
+@model ABCRetails.Models.FileUploadModel
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Upload Payment Proof</h2>
+<form method="post" enctype="multipart/form-data">
+	<div class="mb-2"><label>Proof of Payment</label><input class="form-control" type="file" asp-for="ProofOfPayment" /></div>
+	<div class="mb-2"><label>Order Id (optional)</label><input class="form-control" asp-for="OrderId" /></div>
+	<div class="mb-2"><label>Customer Name (optional)</label><input class="form-control" asp-for="CustomerName" /></div>
+	<button class="btn btn-success">Upload</button>
+</form>
